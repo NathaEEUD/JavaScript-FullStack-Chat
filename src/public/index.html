@@ -5,11 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Chat JavaScript FullStack</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Hello World</h1>
+  <nav class="navbar navbar-light bg-warning">
+    <a class="navbar-brand mx-auto" href="/">JavaScript FullStack Chat</a>
+  </nav>
 
+  <div class="container">
+    <div class="col-md-6 mt-4">
+      <div class="card">
+
+        <div class="card-header">
+          <h4>Lets chat</h4>
+        </div>
+
+        <div id="chat" class="card-body"></div>
+
+        <form id="message-form" class="card-footer">
+          <div class="input-group">
+            <input id="message" class="form-control" type="text" placeholder="Enter your message">
+            <div class="input-group-append">
+              <input type="submit" class="btn btn-warning" value="Enviar">
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
   <script src="http://localhost:3001/socket.io/socket.io.js"></script>
   <script src="js/chat.js" charset="utf-8"></script>
 </body>
