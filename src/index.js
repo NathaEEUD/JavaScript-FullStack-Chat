@@ -15,3 +15,10 @@ const server = app.listen(app.get('port'), () => {
 const SocketIO = require('socket.io');
 const io = SocketIO(server);
 require('./sockets')(io);
+
+// mongodb
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/chat-websockets', { useNewUrlParser: true})
+  .then(db => console.log(`${db} is connected`))
+  .catch(err => console.log(err));

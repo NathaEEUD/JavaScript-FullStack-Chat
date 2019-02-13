@@ -51,12 +51,23 @@ $(function () {
     $usernames.html(html);
   });
 
+  socket.on('server-load:old-messages', data => {
+    data.forEach(message => {
+      displayMsg(message);
+    });
+  })
+
   socket.on('server-send:message', data => {
-    $chat.append('<b>' + data.nick + '</b>: ' + data.msg + '<br/>');
+    displayMsg(data);
   });
 
   socket.on('server-whisper', data => {
     $chat.append(`<p class="whisper"><b>${data.nick}</b>: ${data.msg}</p>`);
   });
+
+  // functions
+  function displayMsg(data) {
+    $chat.append('<b>' + data.nick + '</b>: ' + data.msg + '<br/>');
+  }
   
 })

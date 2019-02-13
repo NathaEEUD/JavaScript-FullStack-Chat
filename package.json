@@ -20,6 +20,7 @@
   "homepage": "https://github.com/NathaEEUD/JavaScript-FullStack-Chat#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "mongoose": "^5.4.11",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
